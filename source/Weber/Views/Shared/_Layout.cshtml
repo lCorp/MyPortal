@@ -1,122 +1,48 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>@ViewBag.Title</title>
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width" />
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/themes/base/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div id="wrapper">
-        <div id="container">
-            <div id="header">
-                <h1>
-                    Welcome
-                </h1>
-                <span id="auth-area">
-                    @if (Request.IsAuthenticated)
-                    {
-                        <text> Xin chào <strong>@User.Identity.Name</strong>!</text>
-                    }
-                    else
-                    {
-                        <text>
-                        @Html.ActionLink("Đăng Ký", "Register", "Account", routeValues: null, htmlAttributes: null)
-                        |
-                        @Html.ActionLink("Đăng Nhập", "Login", "Account", routeValues: null, htmlAttributes: null)
-                        </text>
-                    }
-                </span>
-                <ul id="nav">
-                    <li>@Html.ActionLink("Trang Chủ", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sản Phẩm", "About", "Home")</li>
-                    <li>@Html.ActionLink("Tin Tức", "Index", "Article")</li>
-                    <li>@Html.ActionLink("Liên Hệ", "Contact", "Home")</li>
-                </ul>
-            </div>
-            <div id="main">
-                <img src="~/images/welcome-icon.gif" style="width: 190px; height: 165px;" alt="Xin Chào!"
-                    class="left" />
-                <div class="para left">
-                    <strong>Uy Tín - Chất Lượng</strong>
-                    <p>
-                        Đây là trang web chuyên về gia sư, đến với chúng tôi:
-                        <ul style="font-style: italic; font-size: 9pt;">
-                            <li>Quý phụ huynh, học sinh có thể tìm cho mình những gia sư thật sự có chất lượng.</li>
-                            <li>Các gia sư sẽ dễ dàng tìm được những lớp phù hợp với khả năng của mình.</li>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         </ul>
-                    </p>
-                </div>
-                <div id="submain" style="display:@ViewBag.ShowSubMain">
-                    <div id="menu">
-                        <h3>
-                            Tìm Lớp Dạy</h3>
-                        Bạn đang là sinh viên? Bạn đã tốt nghiệp? Hoặc bạn đang là giáo viên? Và bạn muốn
-                        truyền đạt kiến thức của mình cho những người có nhu cầu hoặc để có thêm thu nhập
-                        trang trải cho việc học. Hãy trở thành Gia sư của chúng tôi!
-                    </div>
-                    <div id="content">
-                        <h3>
-                            Tìm Gia Sư</h3>
-                        Bạn là phụ huynh? Bạn đang tìm kiếm cho con em mình một người gia sư giỏi? Hoặc
-                        chính bạn đang tìm cho mình một người dạy kèm có chuyên môn tốt. Hãy tìm đến với
-                        chúng tôi để được tư vấn và lựa chọn những gia sư phù hợp nhất.
-                    </div>
-                </div>
-                <div id="contentmain">
-                    @RenderBody()
+                    </nav>
                 </div>
             </div>
-            <div id="subfooter">
-                <table cellspacing="0" cellpadding="2" border="0" align="center" style="margin: 15px;">
-                    <tr>
-                        <td width="25%" align="left" style="padding-left: 10px; padding-right: 10px; text-align: justify;
-                            vertical-align: top; border-right: 1px dashed #DADADA;">
-                            <h1 style="color: #8cbf26;">
-                                XXX XXX XXX</h1>
-                            Đây là trang chuyên về mảng gia sư, nhằm tạo điều kiện cho quý phụ huynh tìm cho
-                            con em mình một gia sư giỏi. Bên cạnh đó cũng góp phần tạo điều kiện cho các bạn
-                            sinh viên tìm được những lớp phù hợp với khả năng của mình, giúp các bạn có cơ hội
-                            truyền đạt kiến thức mình có cho các bạn học sinh cấp dưới, đồng thời cũng có thêm
-                            thu nhập, góp phần trang trải cho việc học của mình.
-                        </td>
-                        <td width="25%" align="left" style="padding-left: 10px; padding-right: 10px; text-align: justify;
-                            vertical-align: top; border-right: 1px dashed #DADADA;">
-                            <h1 style="color: #1ba1e2;">
-                                VÀI NGUYÊN TẮC</h1>
-                            <ul>
-                                <li>Khi đăng tin, phải đảm bảo thông tin được đăng là chính xác.</li>
-                                <li>Chúng tôi có toàn quyền xóa những tin không phù hợp với nội dung của trang web mà
-                                    không cần báo trước.</li>
-                            </ul>
-                        </td>
-                        <td width="25%" align="left" style="padding-left: 10px; padding-right: 10px; text-align: justify;
-                            vertical-align: top;">
-                            <h1 style="color: #f09609;">
-                                ĐÔI LỜI TRI ÂN</h1>
-                            Trang web vẫn đang trong quá trình phát triển về nội dung. Do vậy, chúng tôi rất
-                            mong nhận được sự đóng góp ý kiến và ủng hộ của tất cả các quý phụ huynh và sinh
-                            viên. Rất vui khi quý độc giả giới thiệu trang web này đến những ai mà các bạn biết.
-                            Chúng tôi chân thành cảm ơn qúy vị!
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div id="footer">
-                Bản quyền @DateTime.Now.Year thuộc về chúng tôi. Giữ toàn quyền.<br />
-                @Html.ActionLink("Trang Chủ", "Index", "Home") |
-                @Html.ActionLink("Giới Thiệu", "About", "Home") |
-                @Html.ActionLink("Tin Tức", "Index", "News") |
-                @Html.ActionLink("Liên Hệ", "Contact", "Home")
-            </div>
-            @Scripts.Render("~/bundles/jquery")
-            @Scripts.Render("~/bundles/jqueryui")
-            @Scripts.Render("~/bundles/jqueryval")
-            @RenderSection("scripts", required: false)
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
         </div>
-    </div>
-</body>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
 </html>
