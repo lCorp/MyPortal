@@ -184,6 +184,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\404.jpg" />
+    <Content Include="Images\professor.jpg" />
+    <Content Include="Images\welcome-icon.gif" />
     <Content Include="Scripts\jquery-1.6.2.js" />
     <Content Include="Scripts\jquery-ui-1.8.11.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
