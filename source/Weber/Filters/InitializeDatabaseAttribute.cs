@@ -9,40 +9,37 @@ using Weber.Models;
 namespace Weber.Filters
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
-    public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
+    public sealed class InitializeDatabaseAttribute : ActionFilterAttribute
     {
-        private static SimpleMembershipInitializer _initializer;
+        private static DatabaseInitializer _initializer;
         private static object _initializerLock = new object();
         private static bool _isInitialized;
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            // Ensure ASP.NET Simple Membership is initialized only once per app start
+            // Ensure the database is initialized only once per app start
             LazyInitializer.EnsureInitialized(ref _initializer, ref _isInitialized, ref _initializerLock);
         }
 
-        private class SimpleMembershipInitializer
+        private class DatabaseInitializer
         {
-            public SimpleMembershipInitializer()
+            public DatabaseInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
-
+                Database.SetInitializer<WeberContext>(null);
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new WeberContext())
                     {
                         if (!context.Database.Exists())
                         {
-                            // Create the SimpleMembership database without Entity Framework migration schema
+                            // Create the database without Entity Framework migration schema
                             ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
                         }
                     }
-
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {
-                    throw new InvalidOperationException("The ASP.NET Simple Membership database could not be initialized. For more information, please see http://go.microsoft.com/fwlink/?LinkId=256588", ex);
+                    throw new InvalidOperationException("Database could not be initialized.", ex);
                 }
             }
         }

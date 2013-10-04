@@ -9,9 +9,9 @@ using System.Web.Security;
 
 namespace Weber.Models
 {
-    public class UsersContext : DbContext
+    public class WeberContext : DbContext
     {
-        public UsersContext()
+        public WeberContext()
             : base("DefaultConnection")
         {
         }

@@ -14,7 +14,7 @@ using Weber.Models;
 namespace Weber.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
+    [InitializeDatabase]
     public class AccountController : Controller
     {
         //
@@ -263,7 +263,7 @@ namespace Weber.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (UsersContext db = new UsersContext())
+                using (WeberContext db = new WeberContext())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists
