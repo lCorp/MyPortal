@@ -1,4 +1,4 @@
-Weber
+MyPortal
 =====
 
 SimpleCMS
