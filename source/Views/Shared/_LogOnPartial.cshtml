@@ -1,0 +1,14 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <b>Hello @Html.ActionLink(User.Identity.Name, "Manage", "Account")!</b>
+    using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logOutForm", style = "display:inline;" }))
+    {
+        @Html.AntiForgeryToken()
+        <i>[ <a href="javascript:document.getElementById('logOutForm').submit()">Logout</a> ]</i>
+    }
+}
+else
+{
+    <i>[ @Html.ActionLink("Login", "Login", "Account") ]
+    [ @Html.ActionLink("Register", "Register", "Account") ]</i>
+}
