@@ -4,11 +4,11 @@
     using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logOutForm", style = "display:inline;" }))
     {
         @Html.AntiForgeryToken()
-        <i>[ <a href="javascript:document.getElementById('logOutForm').submit()">Logout</a> ]</i>
+        <text>[ <a href="javascript:document.getElementById('logOutForm').submit()">Logout</a> ]</text>
     }
 }
 else
 {
-    <i>[ @Html.ActionLink("Login", "Login", "Account") ]
-    [ @Html.ActionLink("Register", "Register", "Account") ]</i>
+    <text>[ @Html.ActionLink("Login", "Login", "Account") ]
+    [ @Html.ActionLink("Register", "Register", "Account") ]</text>
 }

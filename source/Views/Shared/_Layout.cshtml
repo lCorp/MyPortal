@@ -18,18 +18,19 @@
         </header>
         <nav>
             <ul id="menu" class="metro-list">
-                <li>@Html.ActionLink("Homepage", "Access", "Module")</li>
-                <li>@Html.ActionLink("Services", "Access", "Module")</li>
-                <li>@Html.ActionLink("Article", "Access", "Module")</li>
-                <li>@Html.ActionLink("Contact", "Access", "Module")</li>
+                <li>@Html.ActionLink("Homepage", "Index", "Home")</li>
+                <li>@Html.ActionLink("Services", "Index", "Service")</li>
+                <li>@Html.ActionLink("Article", "Index", "Article")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
             </ul>
         </nav>
         <section id="main">
-        <h2>@ViewBag.Title</h2>
-            @RenderSection("featured", required: false)
+        <h1>@ViewBag.Title</h1>
             @RenderBody()
         </section>
         <footer>
+            Copyright 2013 @{if (DateTime.Now.Year > 2013)
+                               {<text>"-" + DateTime.Now.Year.ToString()</text>}} &copy; MyPortal. All right reserved.
         </footer>
     </div>
     @Scripts.Render("~/bundles/jquery")
