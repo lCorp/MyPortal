@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>@ViewBag.Title - MyPortal</title>
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div class="page">
@@ -23,8 +24,7 @@
             @RenderBody()
         </section>
         <footer>
-            Copyright 2013 @{if (DateTime.Now.Year > 2013)
-                             {<text>"-" + DateTime.Now.Year.ToString()</text>}} &copy; MyPortal. All right reserved.
+            Copyright since 2013 &copy; MyPortal. All right reserved.
         </footer>
     </div>
     @RenderSection("scripts", required: false)
