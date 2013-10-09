@@ -544,7 +544,7 @@ h1 {
   font-size: 42px;
 }
 h2 {
-  font-size: 35px;
+  font-size: 28px;
 }
 h3 {
   font-size: 28px;
@@ -685,6 +685,11 @@ header {
 nav {
   width: 160px;
   float: left;
+}
+footer
+{
+  clear: both;
+  float: right;
 }
 section#main {
   margin-left: 180px;
