@@ -265,6 +265,14 @@
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-2.0.3.min.map" />
+    <None Include="Content\fonts\Roboto-Light-webfont.eot" />
+    <None Include="Content\fonts\Roboto-Light-webfont.svg" />
+    <None Include="Content\fonts\Roboto-Light-webfont.ttf" />
+    <None Include="Content\fonts\Roboto-Light-webfont.woff" />
+    <None Include="Content\fonts\Roboto-Regular-webfont.eot" />
+    <None Include="Content\fonts\Roboto-Regular-webfont.svg" />
+    <None Include="Content\fonts\Roboto-Regular-webfont.ttf" />
+    <None Include="Content\fonts\Roboto-Regular-webfont.woff" />
     <None Include="lCorp.snk" />
     <None Include="Scripts\jquery-2.0.3-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.10.3.js" />

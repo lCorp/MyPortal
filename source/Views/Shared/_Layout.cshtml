@@ -18,7 +18,7 @@
         </header>
         <nav>
             <ul id="menu" class="metro-list">
-                <li>@Html.ActionLink("Homepage", "Index", "Home")</li>
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
                 <li>@Html.ActionLink("Services", "Index", "Service")</li>
                 <li>@Html.ActionLink("Article", "Index", "Article")</li>
                 <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
@@ -30,7 +30,7 @@
         </section>
         <footer>
             Copyright 2013 @{if (DateTime.Now.Year > 2013)
-                               {<text>"-" + DateTime.Now.Year.ToString()</text>}} &copy; MyPortal. All right reserved.
+                             {<text>"-" + DateTime.Now.Year.ToString()</text>}} &copy; MyPortal. All right reserved.
         </footer>
     </div>
     @Scripts.Render("~/bundles/jquery")
