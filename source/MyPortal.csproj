@@ -203,7 +203,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\CareerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Filters\InitializeDatabaseAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -278,6 +281,16 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-2.0.3.min.map" />
@@ -311,16 +324,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Scripts\_references.js" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -338,6 +341,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LogInPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\Career\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -10,7 +10,7 @@
     <div class="page">
         <header>
             <div id="title">
-                <h1>MyPortal</h1>
+                <h1>lCorp</h1>
             </div>
             <div id="logindisplay">
                 @Html.Partial("_LogInPartial")
@@ -20,11 +20,11 @@
             @Html.Partial("_NavigationPartial")
         </nav>
         <section id="main">
-            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Title</h2>
             @RenderBody()
         </section>
         <footer>
-            Copyright since 2013 &copy; MyPortal. All right reserved.
+            <copyright>Copyright since 2013 &copy; lCorp. All right reserved.</copyright>
         </footer>
     </div>
     @RenderSection("scripts", required: false)

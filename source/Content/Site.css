@@ -398,19 +398,6 @@ textarea {
   background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
-/*Copyright 2012 Twitter, Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.*/
 .pull-right {
   float: right;
 }
@@ -505,15 +492,15 @@ limitations under the License.*/
 }
 @font-face {
   font-family: 'RobotoRegular';
-  src: url('fonts/Roboto-Regular-webfont.eot');
-  src: url('fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-Regular-webfont.woff') format('woff'), url('fonts/Roboto-Regular-webfont.ttf') format('truetype'), url('fonts/Roboto-Regular-webfont.svg#RobotoRegular') format('svg');
+  src: url('../fonts/Roboto-Regular-webfont.eot');
+  src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-Regular-webfont.woff') format('woff'), url('../fonts/Roboto-Regular-webfont.ttf') format('truetype'), url('../fonts/Roboto-Regular-webfont.svg#RobotoRegular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'RobotoLight';
-  src: url('fonts/Roboto-Light-webfont.eot');
-  src: url('fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-Light-webfont.woff') format('woff'), url('fonts/Roboto-Light-webfont.ttf') format('truetype'), url('fonts/Roboto-Light-webfont.svg#RobotoLight') format('svg');
+  src: url('../fonts/Roboto-Light-webfont.eot');
+  src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-Light-webfont.woff') format('woff'), url('../fonts/Roboto-Light-webfont.ttf') format('truetype'), url('../fonts/Roboto-Light-webfont.svg#RobotoLight') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -541,10 +528,10 @@ h6 {
   text-transform: lowercase;
 }
 h1 {
-  font-size: 42px;
+  font-size: 56px;
 }
 h2 {
-  font-size: 35px;
+  font-size: 42px;
 }
 h3 {
   font-size: 28px;
@@ -671,12 +658,10 @@ header {
 #title {
   float: left;
 }
-#title h1{
-  font-size: 56px;
-}
 #logindisplay {
   float: right;
   margin-top: 50px;
+  font-style: italic;
 }
 .page {
   width: 960px;
@@ -686,10 +671,11 @@ nav {
   width: 160px;
   float: left;
 }
-footer
-{
-  clear: both;
-  float: right;
+footer {
+    padding: 20px 0px 20px 0;
+}
+copyright {
+    font-style:italic;
 }
 section#main {
   margin-left: 180px;
@@ -714,6 +700,7 @@ table.metro-table td {
 .field-validation-error {
     color: #f09609;
 }
+
 .field-validation-valid {
     display: none;
 }
