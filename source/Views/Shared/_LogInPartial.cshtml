@@ -1,4 +1,5 @@
-﻿@if (Request.IsAuthenticated)
+﻿[ <a href="#">United States - English</a> ] | 
+@if (Request.IsAuthenticated)
 {
     <text>Hello @Html.ActionLink(User.Identity.Name, "Manage", "Account")! </text>
     using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logOutForm", style = "display:inline;" }))
