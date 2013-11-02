@@ -35,6 +35,7 @@ namespace MyPortal.Filters
                             // Create the database without Entity Framework migration schema
                             ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
                         }
+                        WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
                     }
                 }
                 catch (Exception ex)

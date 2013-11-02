@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MyPortal.Controllers
 {
-    public class ArticleController : Controller
+    public class ArticleController : BaseController
     {
         //
         // GET: /Article/

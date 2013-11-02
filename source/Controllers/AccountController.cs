@@ -15,7 +15,7 @@ namespace MyPortal.Controllers
 {
     [Authorize]
     [InitializeDatabase]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         //
         // GET: /Account/Login

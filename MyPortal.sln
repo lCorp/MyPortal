@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPortal", "source\MyPortal.csproj", "{95FB93DE-7C16-4BE5-9C07-F1E90C9AADE9}"
 EndProject
 Global

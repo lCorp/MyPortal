@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MyPortal.Controllers
 {
-    public class CareerController : Controller
+    public class CareerController : BaseController
     {
         //
         // GET: /Carrer/

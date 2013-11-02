@@ -661,7 +661,7 @@ header {
 #logindisplay {
   float: right;
   margin-top: 50px;
-  font-style: italic;
+  font-style: normal;
 }
 .page {
   width: 960px;
@@ -675,7 +675,7 @@ footer {
     padding: 20px 0px 20px 0;
 }
 copyright {
-    font-style:italic;
+    font-style: normal;
 }
 section#main {
   margin-left: 180px;
@@ -747,4 +747,22 @@ code {
 }
 .clear {
   clear: both;
+}
+.contact
+{
+}
+.phone
+{
+}
+.email
+{
+}
+.address
+{
+}
+.phone span,
+.email span,
+.address span
+{
+    font-style: oblique;
 }

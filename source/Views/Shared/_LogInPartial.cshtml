@@ -1,5 +1,4 @@
-﻿[ <a href="#">United States - English</a> ] 
-@if (Request.IsAuthenticated)
+﻿@if (Request.IsAuthenticated)
 {
     <text>Hello @Html.ActionLink(User.Identity.Name, "Manage", "Account")! </text>
     using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logOutForm", style = "display:inline;" }))
@@ -13,3 +12,4 @@ else
     <text>[ @Html.ActionLink("Login", "Login", "Account") ]
     [ @Html.ActionLink("Register", "Register", "Account") ]</text>
 }
+[ <a href="#">United States - English</a> ]

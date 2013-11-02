@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MyPortal.Controllers
 {
-    public class SharedController : Controller
+    public class SharedController : BaseController
     {
         public ActionResult Error()
         {
