@@ -220,10 +220,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_GlobalResources\Views\Account\Views.Account.Register.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Views.Account.Register.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_GlobalResources\Views\Account\Views.Account.Index.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Views.Account.Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Views\Account\Views.Account.Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Views.Account.Login.resx</DependentUpon>
     </Compile>
     <Compile Include="App_GlobalResources\Views\Article\Views.Article.Index.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -254,6 +264,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Views.Shared.Error.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Views\Shared\Views.Shared.LoginPartial.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Views.Shared.LoginPartial.resx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -367,22 +382,6 @@
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
     <Content Include="Scripts\jquery-2.0.3.min.map" />
-    <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
-    <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
-    <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
-    <None Include="_bin_deployableAssemblies\x86\sqlceer40EN.dll" />
-    <None Include="_bin_deployableAssemblies\x86\sqlcecompact40.dll" />
-    <None Include="_bin_deployableAssemblies\x86\sqlceca40.dll" />
-    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\README_ENU.txt" />
-    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\msvcr90.dll" />
-    <None Include="_bin_deployableAssemblies\amd64\sqlcese40.dll" />
-    <None Include="_bin_deployableAssemblies\amd64\sqlceqp40.dll" />
-    <None Include="_bin_deployableAssemblies\amd64\sqlceme40.dll" />
-    <None Include="_bin_deployableAssemblies\amd64\sqlceer40EN.dll" />
-    <None Include="_bin_deployableAssemblies\amd64\sqlcecompact40.dll" />
-    <None Include="_bin_deployableAssemblies\amd64\sqlceca40.dll" />
-    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
-    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
     <None Include="Content\fonts\Roboto-Light-webfont.eot" />
     <None Include="Content\fonts\Roboto-Light-webfont.svg" />
     <None Include="Content\fonts\Roboto-Light-webfont.ttf" />
@@ -435,8 +434,6 @@
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Service\Index.cshtml" />
     <Content Include="Views\Career\Index.cshtml" />
-    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
-    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -518,6 +515,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Views\Account\Views.Account.Login.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Views.Account.Login.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Views\Account\Views.Account.Register.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Views.Account.Register.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Views\Shared\Views.Shared.LoginPartial.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Views.Shared.LoginPartial.Designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

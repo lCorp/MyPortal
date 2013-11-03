@@ -1,7 +1,7 @@
 ﻿@model MyPortal.Models.LoginModel
 
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = Resources.Views.Account.Login.Title;
 }
 
 <section id="loginForm">
@@ -10,33 +10,29 @@
         <p>
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
-
-            @Html.LabelFor(m=>m.UserName)<br />
-            @Html.TextBoxFor(m => m.UserName)
-            @Html.ValidationMessageFor(m => m.UserName)<br />
-
-            @Html.LabelFor(m=>m.Password)<br />
-            @Html.PasswordFor(m => m.Password)
-            @Html.ValidationMessageFor(m => m.Password)<br />
-
-            @Html.CheckBoxFor(m => m.RememberMe)
-            @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })<br />
         </p>
-        
-        <input type="submit" value="Log in" />
-        
-        <br />
+        <p>
+            @Html.LabelFor(m => m.UserName, new { Class = "editor-label" })
+            @Html.TextBoxFor(m => m.UserName, new { Class = "editor-field" })
+            @Html.ValidationMessageFor(m => m.UserName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Password, new { Class = "editor-label" })
+            @Html.PasswordFor(m => m.Password, new { Class = "editor-field" })
+            @Html.ValidationMessageFor(m => m.Password)
+        </p>
+        <p>
+            @Html.CheckBoxFor(m => m.RememberMe)
+            @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+        </p>
+        <p>
+            <input type="submit" value="@Resources.Views.Account.Login.btnLogin_Text" />
+        </p>
+        <p>
+            @Html.ActionLink(Resources.Views.Account.Register.Title, "Register") @Resources.Views.Account.Login.RecommendRegister
+        </p>
     }
 </section>
-
-@*<section class="social" id="socialLoginForm">
-    <h3>Or use another service to log in.</h3>
-    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>*@
-
-<p>
-    @Html.ActionLink("Register", "Register") if you don't have an account.
-</p>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

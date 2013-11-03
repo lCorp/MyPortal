@@ -699,6 +699,8 @@ table.metro-table td {
 /* styles for validation helpers */
 .field-validation-error {
     color: #f09609;
+    font-style: oblique;
+    clear: both;
 }
 
 .field-validation-valid {
@@ -718,10 +720,11 @@ table.metro-table td {
   list-style: initial;
   padding: 10px;
   margin: 0;
-  font-style:italic;
+  font-style: oblique;
 }
 .editor-label, .display-label {
   margin-bottom: 2px;
+  display: block;
 }
 .editor-field, .display-field {
   margin-bottom: 10px;

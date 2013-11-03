@@ -26,7 +26,7 @@ namespace MyPortal
                 appId: "408313192560550",
                 appSecret: "6286f52476612ec89d4693ee8a2d45c5");
 
-            //OAuthWebSecurity.RegisterGoogleClient();
+            OAuthWebSecurity.RegisterGoogleClient();
         }
     }
 }

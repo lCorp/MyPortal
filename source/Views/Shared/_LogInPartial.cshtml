@@ -3,13 +3,13 @@
     <text>Hello @Html.ActionLink(User.Identity.Name, "Manage", "Account")! </text>
     using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logOutForm", style = "display:inline;" }))
     {
-        @Html.AntiForgeryToken()
-        <text>[ <a href="javascript:document.getElementById('logOutForm').submit()">Logout</a> ]</text>
+    @Html.AntiForgeryToken()
+    <text>[ <a href="javascript:document.getElementById('logOutForm').submit()">Resources.Views.Shared.LoginPartial.lnkLogin_Text</a> ]</text>
     }
 }
 else
 {
-    <text>[ @Html.ActionLink("Login", "Login", "Account") ]
-    [ @Html.ActionLink("Register", "Register", "Account") ]</text>
+    <text>[ @Html.ActionLink(Resources.Views.Shared.LoginPartial.lnkLogin_Text, "Login", "Account") ]
+    [ @Html.ActionLink(Resources.Views.Shared.LoginPartial.lnkRegister_Text, "Register", "Account") ]</text>
 }
-[ <a href="#">United States - English</a> ]
+[ @Html.ActionLink(Culture, "Index", "Culture") ]

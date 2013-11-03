@@ -6,16 +6,19 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
+    @Html.ValidationSummary(true)
     <p>
         @Html.LabelFor(m => m.UserName)<br />
-        @Html.TextBoxFor(m => m.UserName)<br />
+        @Html.TextBoxFor(m => m.UserName)
+        @Html.ValidationMessageFor(m => m.UserName)<br />
 
         @Html.LabelFor(m => m.Password)<br />
-        @Html.PasswordFor(m => m.Password)<br />
+        @Html.PasswordFor(m => m.Password)
+        @Html.ValidationMessageFor(m => m.Password)<br />
 
         @Html.LabelFor(m => m.ConfirmPassword)<br />
-        @Html.PasswordFor(m => m.ConfirmPassword)<br />
+        @Html.PasswordFor(m => m.ConfirmPassword)
+        @Html.ValidationMessageFor(m => m.ConfirmPassword)<br />
     </p>
     <input type="submit" value="Register" />
 }
