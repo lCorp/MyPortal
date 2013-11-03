@@ -8,17 +8,19 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     <p>
-        @Html.LabelFor(m => m.UserName)<br />
-        @Html.TextBoxFor(m => m.UserName)
-        @Html.ValidationMessageFor(m => m.UserName)<br />
-
-        @Html.LabelFor(m => m.Password)<br />
-        @Html.PasswordFor(m => m.Password)
-        @Html.ValidationMessageFor(m => m.Password)<br />
-
-        @Html.LabelFor(m => m.ConfirmPassword)<br />
-        @Html.PasswordFor(m => m.ConfirmPassword)
-        @Html.ValidationMessageFor(m => m.ConfirmPassword)<br />
+        @Html.LabelFor(m => m.UserName, new { Class = "editor-label" })
+        @Html.TextBoxFor(m => m.UserName, new { Class = "editor-field" })
+        @Html.ValidationMessageFor(m => m.UserName)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Password, new { Class = "editor-label" })
+        @Html.PasswordFor(m => m.Password, new { Class = "editor-field" })
+        @Html.ValidationMessageFor(m => m.Password)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.ConfirmPassword, new { Class = "editor-label" })
+        @Html.PasswordFor(m => m.ConfirmPassword, new { Class = "editor-field" })
+        @Html.ValidationMessageFor(m => m.ConfirmPassword)
     </p>
     <input type="submit" value="Register" />
 }
