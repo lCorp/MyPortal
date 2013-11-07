@@ -15,11 +15,11 @@ namespace MyPortal.Utils
             }
         }
 
-        public static string StartYear
+        public static string CopyrightYear
         {
             get
             {
-                return GetAppSetting("StartYear");
+                return GetAppSetting("CopyrightYear");
             }
         }
 
