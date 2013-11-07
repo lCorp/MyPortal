@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MyPortal.Services
+namespace MyPortal.DataServices
 {
-    public abstract class BaseService
+    public class CareerDataService
     {
     }
 }
