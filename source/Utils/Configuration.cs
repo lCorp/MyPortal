@@ -19,7 +19,7 @@ namespace MyPortal.Utils
         {
             get
             {
-                return GetAppSetting("CopyrightYear");
+                return DateTime.Today.Year.ToString();
             }
         }
 

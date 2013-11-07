@@ -61,11 +61,29 @@ namespace Resources.Views.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copyright since {0} © {1}. All rights reserved..
+        ///   Looks up a localized string similar to {0} © {1}.
         /// </summary>
         internal static string CopyRight {
             get {
                 return ResourceManager.GetString("CopyRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privacy.
+        /// </summary>
+        internal static string Privacy {
+            get {
+                return ResourceManager.GetString("Privacy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Term of Use.
+        /// </summary>
+        internal static string TermOfUse {
+            get {
+                return ResourceManager.GetString("TermOfUse", resourceCulture);
             }
         }
     }

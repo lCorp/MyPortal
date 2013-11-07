@@ -1,9 +1,7 @@
 ﻿@model MyPortal.Models.LoginModel
-
 @{
     ViewBag.Title = Resources.Views.Account.Login.Title;
 }
-
 <section id="loginForm">
     @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
     {
@@ -15,8 +13,7 @@
             @Html.LabelFor(m => m.UserName, new { Class = "editor-label" })
             @Html.TextBoxFor(m => m.UserName, new { Class = "editor-field" })
             @Html.ValidationMessageFor(m => m.UserName)
-        </p>
-        <p>
+
             @Html.LabelFor(m => m.Password, new { Class = "editor-label" })
             @Html.PasswordFor(m => m.Password, new { Class = "editor-field" })
             @Html.ValidationMessageFor(m => m.Password)
@@ -33,7 +30,6 @@
         </p>
     }
 </section>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

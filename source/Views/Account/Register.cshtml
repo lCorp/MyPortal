@@ -2,29 +2,30 @@
 @{
     ViewBag.Title = "Register";
 }
-
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+    <p>
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+    </p>
     <p>
         @Html.LabelFor(m => m.UserName, new { Class = "editor-label" })
         @Html.TextBoxFor(m => m.UserName, new { Class = "editor-field" })
         @Html.ValidationMessageFor(m => m.UserName)
-    </p>
-    <p>
         @Html.LabelFor(m => m.Password, new { Class = "editor-label" })
         @Html.PasswordFor(m => m.Password, new { Class = "editor-field" })
         @Html.ValidationMessageFor(m => m.Password)
-    </p>
-    <p>
         @Html.LabelFor(m => m.ConfirmPassword, new { Class = "editor-label" })
         @Html.PasswordFor(m => m.ConfirmPassword, new { Class = "editor-field" })
         @Html.ValidationMessageFor(m => m.ConfirmPassword)
     </p>
-    <input type="submit" value="Register" />
+    <p>
+        <input type="submit" value="Register" />
+    </p>
+    <p>
+        @Html.ActionLink(Resources.Views.Account.Login.Title, "Login") @Resources.Views.Account.Login.RecommendRegister
+    </p>
 }
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

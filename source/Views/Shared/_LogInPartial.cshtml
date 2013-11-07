@@ -4,7 +4,7 @@
     using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { id = "logOutForm", style = "display:inline;" }))
     {
     @Html.AntiForgeryToken()
-    <text>[ <a href="javascript:document.getElementById('logOutForm').submit()">Resources.Views.Shared.LoginPartial.lnkLogin_Text</a> ]</text>
+    <text>[ <a href="javascript:document.getElementById('logOutForm').submit()">@Resources.Views.Shared.LoginPartial.lnkLogout_Text</a> ]</text>
     }
 }
 else
@@ -12,4 +12,3 @@ else
     <text>[ @Html.ActionLink(Resources.Views.Shared.LoginPartial.lnkLogin_Text, "Login", "Account") ]
     [ @Html.ActionLink(Resources.Views.Shared.LoginPartial.lnkRegister_Text, "Register", "Account") ]</text>
 }
-[ @Html.ActionLink(Culture, "Index", "Culture") ]

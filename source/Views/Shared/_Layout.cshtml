@@ -25,9 +25,10 @@
             @RenderBody()
         </section>
         <footer>
-            <copyright>
-                @String.Format(@Resources.Views.Shared.Layout.CopyRight, MyPortal.Utils.Configuration.CopyrightYear, MyPortal.Utils.Configuration.WebsiteName) 
-            </copyright>
+            [ @Html.ActionLink(String.Format(Resources.Views.Shared.Layout.CopyRight, MyPortal.Utils.Configuration.WebsiteName, MyPortal.Utils.Configuration.CopyrightYear), "Index", "Home") ]
+            [ @Html.ActionLink(Resources.Views.Shared.Layout.TermOfUse, "TermOfUse", "Home") ]
+            [ @Html.ActionLink(Resources.Views.Shared.Layout.Privacy, "Privacy", "Home") ]
+            [ @Html.ActionLink(Culture, "Index", "Culture") ]
         </footer>
     </div>
     @RenderSection("scripts", required: false)
