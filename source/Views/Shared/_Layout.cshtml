@@ -24,8 +24,8 @@
             <h2>@ViewBag.Title</h2>
             @RenderBody()
         </section>
-        <section id="left">
-            @RenderSection("left", required: false)
+        <section id="right">
+            @RenderSection("Right", required: false)
         </section>
         <footer>
             [ @Html.ActionLink(String.Format(Resources.Views.Shared.Layout.CopyRight, MyPortal.Utils.Configuration.WebsiteName, MyPortal.Utils.Configuration.CopyrightYear), "Index", "Home") ]
