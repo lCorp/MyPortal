@@ -5,42 +5,33 @@
 <section id="loginForm">
     @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
     {
-        <p>
-            @Html.AntiForgeryToken()
-            @Html.ValidationSummary(true)
-        </p>
-        <p>
-            @Html.LabelFor(m => m.UserName, new { Class = "editor-label" })
-            @Html.TextBoxFor(m => m.UserName, new { Class = "editor-field" })
-            @Html.ValidationMessageFor(m => m.UserName)
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        
+        @Html.LabelFor(m => m.UserName, new { Class = "editor-label" })
+        @Html.TextBoxFor(m => m.UserName, new { Class = "editor-field" })
+        <text>&nbsp;</text>@Html.ValidationMessageFor(m => m.UserName)
 
-            @Html.LabelFor(m => m.Password, new { Class = "editor-label" })
-            @Html.PasswordFor(m => m.Password, new { Class = "editor-field" })
-            @Html.ValidationMessageFor(m => m.Password)
-        </p>
-        <p>
-            @Html.CheckBoxFor(m => m.RememberMe)
-            @Html.LabelFor(m => m.RememberMe)
-        </p>
-        <p>
-            <input type="submit" value="@Resources.Views.Account.Login.btnLogin_Text" />
-        </p>
-        <p>
-            @Html.ActionLink(Resources.Views.Account.Register.Title, "Register") @Resources.Views.Account.Login.RecommendRegister
-        </p>
+        @Html.LabelFor(m => m.Password, new { Class = "editor-label" })
+        @Html.PasswordFor(m => m.Password, new { Class = "editor-field" })
+        <text>&nbsp;</text>@Html.ValidationMessageFor(m => m.Password)
+
+        <div class="input-control checkbox editor-field clear" data-role="input-control">
+            <label>
+                <input id="RememberMe" name="RememberMe" type="checkbox" value="true">
+                <input name="RememberMe" type="hidden" value="false">
+                <span class="check"></span>
+                Remember me?
+            </label>
+        </div>
+        
+        <input class="editor-field clear" type="submit" value="@Resources.Views.Account.Login.btnLogin_Text" />
+        
+        <label>@Html.ActionLink(Resources.Views.Account.Register.Title, "Register") @Resources.Views.Account.Login.RecommendRegister</label>
     }
 </section>
 @section Right{
-    <div id="sidebar">
-        <section class="blocks">
-            <a href="#" class="block_one">
-                <h3>Login by Facebook</h3>
-            </a>
-            <a href="#" class="block_two">
-                <h3>Login by Google</h3>
-            </a>
-        </section>
-    </div>
+    @Html.Action("ExternalLoginsSuggestionList")
 }
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

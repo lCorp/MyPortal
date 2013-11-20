@@ -38,6 +38,10 @@ namespace MyPortal
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new StyleBundle("~/Content/themes/metro/css").Include(
+            "~/Content/themes/metro/metro-bootstrap.css",
+            "~/Content/themes/metro/metro-bootstrap-responsive.css"));
         }
     }
 }

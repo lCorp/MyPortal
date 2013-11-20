@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <title>@MyPortal.Utils.Configuration.WebsiteName | @ViewBag.Title</title>
+    @Styles.Render("~/Content/themes/metro/css")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
 </head>
-<body>
-    <div class="page">
+<body class="metro">
+    <div class="doc">
         <header>
             <div id="title">
                 <h1>@MyPortal.Utils.Configuration.WebsiteName</h1>
@@ -21,7 +22,10 @@
             @Html.Partial("_NavigationPartial")
         </nav>
         <section id="main">
-            <h2>@ViewBag.Title</h2>
+            <h2>
+                <a href="/"><i class="icon-arrow-left-3 fg-darker smaller"></i></a>
+                @ViewBag.Title
+            </h2>
             @RenderBody()
         </section>
         <section id="right">

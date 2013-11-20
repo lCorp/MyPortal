@@ -307,6 +307,14 @@ namespace MyPortal.Controllers
             return PartialView("_ExternalLoginsListPartial", OAuthWebSecurity.RegisteredClientData);
         }
 
+        [AllowAnonymous]
+        [ChildActionOnly]
+        public ActionResult ExternalLoginsSuggestionList(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return PartialView("_ExternalLoginsSuggestionListPartial", OAuthWebSecurity.RegisteredClientData);
+        }
+
         [ChildActionOnly]
         public ActionResult RemoveExternalLogins()
         {
