@@ -1,2 +1,0 @@
-- Database is auto generated if no one existed.
-- The type of database is depended on the provider on connection string in web.config file.

@@ -1,4 +1,0 @@
-MyPortal
-=====
-
-SimpleCMS
