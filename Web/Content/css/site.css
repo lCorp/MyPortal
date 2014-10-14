@@ -6,10 +6,14 @@ body {
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
-.marketing,
+.content,
 .footer {
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.content{
+    clear: both;
 }
 
 /* Custom page header */
@@ -76,4 +80,12 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.website-name, .website-name:hover{
+    text-decoration: none;
+}
+
+.register-panel{
+    border-right: 1px solid #e5e5e5;
 }

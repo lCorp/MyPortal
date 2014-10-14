@@ -10,5 +10,6 @@ namespace Core
     public class GlobalConfiguration
     {
         public static readonly string DEFAULT_CONNECTION_STRING = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        public static readonly string WEBSITE_NAME = "myPortal";
     }
 }

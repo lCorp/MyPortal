@@ -10,6 +10,7 @@ namespace Web.Controllers
     {
         //
         // GET: /Account/
+        [AllowAnonymous]
         public ActionResult LogOn()
         {
             return View();
