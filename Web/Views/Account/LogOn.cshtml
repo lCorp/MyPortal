@@ -1,4 +1,5 @@
 ﻿@using Core.Models
+@using Microsoft.Owin.Security
 @model Account
 
 @{
@@ -6,7 +7,7 @@
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
 }
 
-<h4>Register or log on or using 3rd party account</h4>
+<h4>Register or Log on or Using 3rd party account</h4>
 <br />
 
 @using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { @class = "form-horizontal" }))
@@ -62,13 +63,16 @@
                     <input type="submit" class="btn btn-success" value="Log On" />
                 </div>
             </div>
-            <div id="form-group">
-                <p>
+            <div class="form-group">
+                <label class="col-md-12 control-label ">Log on using 3rd party account...</label>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-8">
                     @foreach (AuthenticationDescription p in loginProviders)
                     {
-                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log on using your @p.Caption account">@p.AuthenticationType</button>
                     }
-                </p>
+                </div>
             </div>
         </div>
     </div>

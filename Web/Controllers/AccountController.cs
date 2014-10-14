@@ -8,8 +8,6 @@ namespace Web.Controllers
 {
     public class AccountController : Controller
     {
-        //
-        // GET: /Account/
         [AllowAnonymous]
         public ActionResult LogOn()
         {
