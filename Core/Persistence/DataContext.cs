@@ -10,6 +10,8 @@ namespace Core.Persistence
 {
     public class DataContext : DbContext
     {
+        public DbSet<Account> Accounts { get; set; }
+
         public DataContext()
             : base(GlobalConfiguration.DEFAULT_CONNECTION_STRING)
         {
@@ -27,6 +29,6 @@ namespace Core.Persistence
             MigrateDatabaseToLatestVersion<DataContext, DataConfiguration> migrateDatabaseConfiguration = new MigrateDatabaseToLatestVersion<DataContext, DataConfiguration>();
             Database.SetInitializer(migrateDatabaseConfiguration);
             base.OnModelCreating(modelBuilder);
-        }
+        }        
     }
 }

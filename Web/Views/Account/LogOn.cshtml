@@ -10,52 +10,23 @@
 <h4>Register or Log on or Using 3rd party account</h4>
 <br />
 
-@using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { @class = "form-horizontal" }))
-{
-    <div class="row">
-        <div class="col-md-6 register-panel">
-            <div class="form-group">
-                @Html.LabelFor(m => m.AccountName, new { @class = "col-md-6 control-label" })
-                <div class="col-md-6">
-                    @Html.TextBoxFor(m => m.AccountName, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Email, new { @class = "col-md-6 control-label" })
-                <div class="col-md-6">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Password, new { @class = "col-md-6 control-label" })
-                <div class="col-md-6">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-6 control-label" })
-                <div class="col-md-6">
-                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-6 col-md-6">
-                    <input type="submit" class="btn btn-success" value="Register" />
-                </div>
-            </div>
-        </div>
 
-        <div class="col-md-6">
+<div class="row">
+
+    @Html.AntiForgeryToken()
+    <div class="col-md-6 form-horizontal">
+        @using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
             <div class="form-group">
-                @Html.LabelFor(m => m.AccountName, new { @class = "col-md-6 control-label" })
-                <div class="col-md-6">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     @Html.TextBoxFor(m => m.AccountName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.AccountName)
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(m => m.Password, new { @class = "col-md-6 control-label" })
-                <div class="col-md-6">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password)
                 </div>
             </div>
             <div class="form-group">
@@ -66,6 +37,9 @@
             <div class="form-group">
                 <label class="col-md-12 control-label ">Log on using 3rd party account...</label>
             </div>
+        }
+        @using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
             <div class="form-group">
                 <div class="col-md-offset-4 col-md-8">
                     @foreach (AuthenticationDescription p in loginProviders)
@@ -74,6 +48,12 @@
                     }
                 </div>
             </div>
-        </div>
+        }
     </div>
+
+</div>
+
+@section Scripts {
+    <!--load cho nay ne-->
+    @Scripts.Render("~/js/jquery")
 }
