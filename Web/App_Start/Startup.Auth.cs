@@ -21,12 +21,8 @@ namespace Web
 
             // Uncomment the following lines to enable logging in with third party login providers
             app.UseFacebookAuthentication(
-               appId: "dfhdfgh",
-               appSecret: "dfghdfgh");
-
-            app.UseGoogleAuthentication(
-               clientId: "gsdfgsdf",
-               clientSecret: "sfdgsfdg");
+               appId: "885995044744449",
+               appSecret: "9c85ec219916a35ce9fbf19a802ee952");
         }
     }
 }

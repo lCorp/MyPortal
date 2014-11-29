@@ -1,7 +1,17 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Error";
+    
+    string errorTitle = "Error";
+    string errorMessage = "Sorry! An error occurred while processing your request.";
+    
+    if(!string.IsNullOrEmpty(ViewBag.CustomErrorTitle))
+    {
+        errorTitle = ViewBag.CustomErrorTitle;
+        errorMessage = ViewBag.CustomErrorMessage;
+    }
 }
 
-<h2>Error</h2>
-
+<h2>@errorTitle</h2>
+<p>
+    @errorMessage
+</p>

@@ -8,15 +8,15 @@ using Core.Models;
 
 namespace Core.Persistence
 {
-    public class DataConfiguration : DbMigrationsConfiguration<DataContext>
+    public class DatabaseConfiguration : DbMigrationsConfiguration<DatabaseContext>
     {
-        public DataConfiguration()
+        public DatabaseConfiguration()
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(DataContext context)
+        protected override void Seed(DatabaseContext context)
         {
             //Insert initial data
 

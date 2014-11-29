@@ -8,17 +8,17 @@ using Core.Models;
 
 namespace Core.Persistence
 {
-    public class DataContext : DbContext
+    public class DatabaseContext : DbContext
     {
         public DbSet<Account> Accounts { get; set; }
 
-        public DataContext()
+        public DatabaseContext()
             : base(GlobalConfiguration.DEFAULT_CONNECTION_STRING)
         {
 
         }
 
-        public DataContext(string connectionName)
+        public DatabaseContext(string connectionName)
             : base(connectionName)
         {
 
@@ -26,7 +26,7 @@ namespace Core.Persistence
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            MigrateDatabaseToLatestVersion<DataContext, DataConfiguration> migrateDatabaseConfiguration = new MigrateDatabaseToLatestVersion<DataContext, DataConfiguration>();
+            MigrateDatabaseToLatestVersion<DatabaseContext, DatabaseConfiguration> migrateDatabaseConfiguration = new MigrateDatabaseToLatestVersion<DatabaseContext, DatabaseConfiguration>();
             Database.SetInitializer(migrateDatabaseConfiguration);
             base.OnModelCreating(modelBuilder);
         }        

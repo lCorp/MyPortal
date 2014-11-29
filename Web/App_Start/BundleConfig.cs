@@ -12,7 +12,9 @@ namespace Web
                       "~/Content/js/respond.min.js"));
 
             bundles.Add(new ScriptBundle("~/js/jquery").Include(
-                      "~/Content/js/jquery-2.1.1.min.js",
+                      "~/Content/js/jquery-2.1.1.min.js"));
+
+            bundles.Add(new ScriptBundle("~/js/jquery-val").Include(
                       "~/Content/js/jquery.validate.min.js",
                       "~/Content/js/jquery.validate.unobtrusive.min.js",
                       "~/Content/js/jquery.validate.unobtrusive.bootstrap.min.js"));

@@ -1,59 +1,22 @@
-﻿@using Core.Models
-@using Microsoft.Owin.Security
-@model Account
+﻿@using Microsoft.Owin.Security
 
 @{
-    ViewBag.Title = "LogOn";
+    ViewBag.Title = "Log On";
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
 }
 
-<h4>Register or Log on or Using 3rd party account</h4>
-<br />
-
-
-<div class="row">
-
-    @Html.AntiForgeryToken()
-    <div class="col-md-6 form-horizontal">
-        @using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+<div class="jumbotron">
+    <h1>Log On</h1>
+    <p class="lead">No registration, don't need to remember new password, just connect your social network to log on :)</p>
+    @{
+        using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { ReturnUrl = ViewBag.ReturnUrl }))
         {
-            <div class="form-group">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    @Html.TextBoxFor(m => m.AccountName, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.AccountName)
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Password)
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-6 col-md-6">
-                    <input type="submit" class="btn btn-success" value="Log On" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-12 control-label ">Log on using 3rd party account...</label>
-            </div>
-        }
-        @using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <div class="form-group">
-                <div class="col-md-offset-4 col-md-8">
-                    @foreach (AuthenticationDescription p in loginProviders)
-                    {
-                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log on using your @p.Caption account">@p.AuthenticationType</button>
-                    }
-                </div>
-            </div>
-        }
-    </div>
-
+            @Html.AntiForgeryToken()
+            <p>
+                @foreach (AuthenticationDescription p in loginProviders)
+                {
+                    <button type="submit" class="btn btn-primary" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                }
+            </p>
+        }}
 </div>
-
-@section Scripts {
-    <!--load cho nay ne-->
-    @Scripts.Render("~/js/jquery")
-}
